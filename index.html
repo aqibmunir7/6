@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="description" content="Deb's Artisan Bakehouse — hand-crafted small-batch artisan pastry at 402 W Green Street, Middletown, MD. Baked in the Valley since 2018. Open Thursday through Saturday, 9:30am to sellout." />
+<link rel="icon" href="data:," />
+<title>Deb's Artisan Bakehouse — Middletown, MD | Small-Batch Artisan Pastry</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+<style>
+  :root{
+    --bg:#faf5ec; --bg-raise:#fffdf7; --bg-sink:#f0e7d6;
+    --ink:#2b1d12; --ink-soft:#6f5d49; --line:#e3d7bf;
+    --butter:#d9a441; --butter-deep:#b57a14; --berry:#7c2d3e;
+    --dark:#2b1d12; --dark-ink:#faf5ec; --dark-soft:#d9c7ab;
+    --radius:16px; --font-body:'Archivo',system-ui,sans-serif; --font-display:'Fraunces',Georgia,serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--font-body);background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  ::selection{background:var(--butter);color:#2b1d12}
+  .wrap{width:min(1160px,100% - 40px);margin-inline:auto}
+  h1,h2,h3{font-family:var(--font-display);font-weight:700;line-height:1.02;margin:0;letter-spacing:-.01em}
+  .kicker{font-size:.78rem;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:var(--berry)}
+  section{padding:84px 0}
+  .btn{display:inline-flex;align-items:center;gap:10px;font-weight:800;font-size:.95rem;text-decoration:none;padding:15px 26px;border-radius:999px;border:2px solid transparent;transition:transform .15s ease,background .15s ease;cursor:pointer}
+  .btn-butter{background:var(--butter);color:#2b1d12}
+  .btn-butter:hover{background:var(--butter-deep);color:#fff;transform:translateY(-2px)}
+  .btn-ghost{border-color:var(--ink);background:transparent}
+  .btn-ghost:hover{transform:translateY(-2px)}
+  header{position:sticky;top:0;z-index:60;background:rgba(250,245,236,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+  .brand{font-family:var(--font-display);font-size:1.55rem;font-weight:700;text-decoration:none;line-height:1}
+  .brand small{display:block;font-family:var(--font-body);font-size:.6rem;font-weight:700;letter-spacing:.2em;color:var(--ink-soft);margin-top:3px}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{text-decoration:none;font-weight:700;font-size:.92rem}
+  .nav-links a:hover{color:var(--berry)}
+  .nav-cta{padding:11px 20px;font-size:.88rem}
+  .burger{display:none;background:none;border:0;font-size:1.35rem;color:var(--ink);cursor:pointer;padding:6px}
+  @media (max-width:820px){
+    .nav-links{position:absolute;top:100%;left:0;right:0;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;padding:18px 20px 22px;gap:16px;display:none}
+    .nav-links.open{display:flex}
+    .burger{display:block}
+    header .wrap{position:relative}
+  }
+  .hero{padding:0;background:var(--dark);color:var(--dark-ink);overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;min-height:640px}
+  @media (max-width:900px){.hero-grid{grid-template-columns:1fr;min-height:0}}
+  .hero-copy{padding:76px 0 64px}
+  .hero-copy .kicker{color:var(--butter)}
+  .hero h1{font-size:clamp(2.8rem,7vw,5.2rem);margin:18px 0 16px}
+  .hero h1 em{font-style:italic;color:var(--butter)}
+  .hero-sub{max-width:520px;font-size:1.13rem;color:#eadfc9}
+  .hero-award{margin-top:22px;display:inline-flex;gap:10px;align-items:center;background:rgba(217,164,65,.16);border:1px solid rgba(217,164,65,.5);border-radius:999px;padding:9px 16px;font-weight:700;font-size:.9rem;color:#f3dfae}
+  .hero-award i{color:var(--butter)}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0 34px}
+  .btn-outline-w{border-color:rgba(255,255,255,.7);color:#fff;background:transparent}
+  .btn-outline-w:hover{border-color:var(--butter);color:var(--butter)}
+  .hero-meta{display:flex;gap:22px;flex-wrap:wrap;border-top:1px solid rgba(255,255,255,.22);padding-top:22px;font-size:.95rem}
+  .hero-meta div b{display:block;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--butter)}
+  .hero-photo{position:relative;min-height:420px}
+  .hero-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(43,29,18,.55),transparent 55%)}
+  .open-pill{position:absolute;z-index:2;left:20px;bottom:20px;background:var(--bg-raise);color:var(--ink);border-radius:999px;padding:10px 16px;font-weight:800;font-size:.9rem;display:flex;gap:8px;align-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+  .open-pill .dot{width:9px;height:9px;border-radius:50%;background:#2e7d32}
+  .open-pill.closed .dot{background:#b3261e}
+  .strip{background:var(--butter);color:#2b1d12;overflow:hidden;padding:13px 0;border-block:3px solid #2b1d12}
+  .strip-track{display:flex;width:max-content;animation:scrollx 28s linear infinite}
+  .strip span{font-family:var(--font-display);font-weight:700;font-size:1.15rem;white-space:nowrap;padding-right:16px}
+  @keyframes scrollx{to{transform:translateX(-50%)}}
+  @media (prefers-reduced-motion: reduce){.strip-track{animation:none}}
+  .sec-head{max-width:720px;margin-bottom:44px}
+  .sec-head h2{font-size:clamp(2.1rem,5vw,3.3rem);margin:12px 0 14px}
+  .sec-head p{color:var(--ink-soft);font-size:1.05rem;margin:0}
+  .bake-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  @media (max-width:900px){.bake-grid{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.bake-grid{grid-template-columns:1fr}}
+  .bake{background:var(--bg-raise);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .bake img{aspect-ratio:4/3;object-fit:cover;width:100%}
+  .bake-body{padding:22px}
+  .bake-body h3{font-size:1.4rem;margin-bottom:6px}
+  .bake-body p{margin:0;color:var(--ink-soft);font-size:.96rem}
+  .bake-tag{display:inline-block;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--berry);margin-bottom:8px}
+  .bake-note{margin-top:28px;background:var(--bg-sink);border:1px solid var(--line);border-radius:var(--radius);padding:18px 22px;font-size:.95rem;color:var(--ink-soft)}
+  .bake-note b{color:var(--ink)}
+  .visit-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:start}
+  @media (max-width:900px){.visit-grid{grid-template-columns:1fr}}
+  .hours{border:2px solid var(--ink);border-radius:18px;overflow:hidden;background:var(--bg-raise)}
+  .hours-head{background:var(--ink);color:var(--bg);padding:18px 24px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+  .hours-head b{font-family:var(--font-display);font-size:1.25rem;font-weight:700}
+  .hours-head span{background:var(--butter);color:#2b1d12;font-weight:800;border-radius:999px;padding:5px 14px;font-size:.9rem}
+  .hours-row{display:flex;justify-content:space-between;gap:12px;padding:16px 24px;border-top:1px solid var(--line)}
+  .hours-row:first-of-type{border-top:0}
+  .hours-row.today{background:#fdf3d7;font-weight:800}
+  .hours-row .day{font-weight:700}
+  .hours-row .time{font-family:var(--font-display);font-size:1.15rem}
+  .hours-foot{padding:16px 24px;background:var(--bg-sink);font-size:.92rem;color:var(--ink-soft)}
+  .visit-photo{border-radius:18px;overflow:hidden}
+  .visit-photo img{aspect-ratio:4/3;object-fit:cover;width:100%}
+  .visit-list{list-style:none;margin:24px 0 0;padding:0;display:grid;gap:12px}
+  .visit-list li{display:flex;gap:12px;align-items:flex-start;font-size:1rem}
+  .visit-list i{color:var(--berry);margin-top:4px}
+  .story{background:var(--bg-sink)}
+  .story-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:48px;align-items:center}
+  @media (max-width:900px){.story-grid{grid-template-columns:1fr}}
+  .story-photo{border-radius:18px;overflow:hidden}
+  .story-photo img{aspect-ratio:4/3.4;object-fit:cover;width:100%}
+  .story-copy h2{font-size:clamp(2.1rem,5vw,3.2rem);margin:12px 0 16px}
+  .story-copy p{color:var(--ink-soft);margin:0 0 14px}
+  .story-copy p strong{color:var(--ink)}
+  .ig-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  @media (max-width:700px){.ig-grid{grid-template-columns:1fr}}
+  .ig-card{background:var(--bg-raise);border:1px solid var(--line);border-radius:var(--radius);padding:28px;text-decoration:none;display:block}
+  .ig-card:hover{border-color:var(--ink)}
+  .ig-card i{font-size:1.7rem;color:var(--berry)}
+  .ig-card h3{font-size:1.5rem;margin:12px 0 6px}
+  .ig-card p{margin:0;color:var(--ink-soft)}
+  .ig-card span{display:inline-block;margin-top:14px;font-weight:800;font-size:.9rem}
+  .faq-list{max-width:820px}
+  .faq-item{border-bottom:1px solid var(--line)}
+  .faq-item:first-child{border-top:2px solid var(--ink)}
+  .faq-q{width:100%;background:none;border:0;text-align:left;padding:22px 4px;font-family:var(--font-body);font-size:1.08rem;font-weight:800;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+  .faq-q i{transition:transform .18s ease;color:var(--berry)}
+  .faq-item.open .faq-q i{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .25s ease}
+  .faq-a p{margin:0;padding:0 4px 22px;color:var(--ink-soft);max-width:680px}
+  .cta{background:var(--dark);color:var(--dark-ink)}
+  .cta h2{font-size:clamp(2.4rem,6vw,4.2rem);margin-bottom:16px}
+  .cta h2 em{font-style:italic;color:var(--butter)}
+  .cta p{color:var(--dark-soft);max-width:560px;font-size:1.08rem}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+  footer{padding:34px 0 40px;border-top:1px solid var(--line)}
+  .foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+  .foot-links{display:flex;gap:20px;flex-wrap:wrap}
+  .foot-links a{text-decoration:none;font-weight:700;font-size:.92rem}
+  .foot small{color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="brand" href="#top">Deb's<small>Artisan Bakehouse — Middletown, MD</small></a>
+      <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false"><i class="fa-solid fa-bars"></i></button>
+      <div class="nav-links" id="navLinks">
+        <a href="#bakes">Pastries &amp; pies</a>
+        <a href="#visit">Visit</a>
+        <a href="#story">Our story</a>
+        <a href="#instagram">Instagram</a>
+        <a class="btn btn-butter nav-cta" href="https://www.instagram.com/debsartisanbakehouse" target="_blank" rel="noopener">Follow on Instagram <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+      </div>
+    </nav>
+  </div>
+</header>
+<main id="top">
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">Hand-crafted small-batch artisan pastry — Middletown, MD</p>
+        <h1>Small-batch pastries,<br />baked in the Valley <em>since 2018.</em></h1>
+        <p class="hero-sub">Deb's is a women-owned artisan bakehouse on Green Street. Small-batch pastries and pies that sell out — people line up before the doors open. Come early, and check Instagram for what is baking today.</p>
+        <p class="hero-award"><i class="fa-solid fa-award"></i>Voted Frederick County's Best Bakery, 7 years in a row</p>
+        <div class="hero-ctas">
+          <a class="btn btn-butter" href="#bakes">See the pastries &amp; pies <i class="fa-solid fa-arrow-down"></i></a>
+          <a class="btn btn-outline-w" href="https://www.google.com/maps/search/?api=1&amp;query=402+W+Green+Street%2C+Middletown%2C+MD" target="_blank" rel="noopener">Find us <i class="fa-solid fa-location-dot"></i></a>
+        </div>
+        <div class="hero-meta">
+          <div><b>Address</b>402 W Green Street, Middletown, MD</div>
+          <div><b>Hours</b>Thu–Sat, 9:30am–sellout</div>
+          <div><b>Today</b><span id="todayStatus">Check Instagram for today</span></div>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?q=80&amp;w=1600&amp;auto=format&amp;fit=crop" alt="Fresh pastries on a bakery tray" />
+        <div class="open-pill" id="openPill"><span class="dot"></span><span id="openText">Open Thu–Sat, 9:30am–sellout</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="strip" aria-hidden="true"><div class="strip-track">
+    <span>Artisan pastries&nbsp;·&nbsp;</span><span>Apple crumb pie&nbsp;·&nbsp;</span><span>German chocolate pie&nbsp;·&nbsp;</span><span>5-inch square pies&nbsp;·&nbsp;</span><span>Thanksgiving pies&nbsp;·&nbsp;</span><span>Baked in the Valley since 2018&nbsp;·&nbsp;</span>
+    <span>Artisan pastries&nbsp;·&nbsp;</span><span>Apple crumb pie&nbsp;·&nbsp;</span><span>German chocolate pie&nbsp;·&nbsp;</span><span>5-inch square pies&nbsp;·&nbsp;</span><span>Thanksgiving pies&nbsp;·&nbsp;</span><span>Baked in the Valley since 2018&nbsp;·&nbsp;</span>
+  </div></div>
+
+  <section id="bakes">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">From the counter</p>
+        <h2>Pastries &amp; pies people line up for</h2>
+        <p>What is baking changes. These are the pastries and pies Deb's is known for on Instagram — check <a href="https://www.instagram.com/debsartisanbakehouse" target="_blank" rel="noopener">@debsartisanbakehouse</a> before you come, because the counter sells out.</p>
+      </div>
+      <div class="bake-grid">
+        <article class="bake">
+          <img src="https://images.unsplash.com/photo-1509365465985-25d11c17e812?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Fresh artisan pastries" />
+          <div class="bake-body"><span class="bake-tag">Small-batch</span><h3>Artisan pastries</h3><p>Hand-crafted, small-batch pastries, baked fresh for the day. When they are gone, they are gone — people line up before the doors open.</p></div>
+        </article>
+        <article class="bake">
+          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="A freshly baked pie" />
+          <div class="bake-body"><span class="bake-tag">From the pie counter</span><h3>Apple crumb pie</h3><p>Apple crumb pie from the bakehouse counter. Check Instagram for when it is baking this week.</p></div>
+        </article>
+        <article class="bake">
+          <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="A chocolate pie" />
+          <div class="bake-body"><span class="bake-tag">From the pie counter</span><h3>German chocolate pie</h3><p>German chocolate pie from the bakehouse counter. Check Instagram for when it is baking this week.</p></div>
+        </article>
+        <article class="bake">
+          <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Pastry and coffee on a table" />
+          <div class="bake-body"><span class="bake-tag">5-inch square</span><h3>5-inch square pies</h3><p>Small 5-inch square pies — a bakehouse size for one table, or one very happy person. Check Instagram for this week's flavours.</p></div>
+        </article>
+        <article class="bake">
+          <img src="https://images.unsplash.com/photo-1512389142860-9c449e58a543?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Holiday baking" />
+          <div class="bake-body"><span class="bake-tag">Seasonal</span><h3>Thanksgiving pies</h3><p>Thanksgiving pies are announced on Instagram. Check there for dates and how to order — they go fast.</p></div>
+        </article>
+        <article class="bake">
+          <img src="https://images.unsplash.com/photo-1483695028939-5bb13f8648b0?q=80&amp;w=1200&amp;auto=format&amp;fit=crop" alt="Pastry and coffee" />
+          <div class="bake-body"><span class="bake-tag">Saturdays</span><h3>Saturday preorders</h3><p>Saturday preorders go through the preorder link in the Instagram bio. Check Instagram on Saturday for what is available to preorder.</p></div>
+        </article>
+      </div>
+      <div class="bake-note"><b>No full menu online yet?</b> That is the point of this page. The current homepage says the menu lives on socials, and there are no preorders there — so the menu, hours and ordering live only on Instagram. Ask in the shop, email <a href="mailto:debsartisanbakehouse@gmail.com">debsartisanbakehouse@gmail.com</a>, or send a DM to <a href="https://www.instagram.com/debsartisanbakehouse" target="_blank" rel="noopener">@debsartisanbakehouse</a> for this week's bakes.</div>
+    </div>
+  </section>
+
+  <section id="visit" style="padding-top:0">
+    <div class="wrap visit-grid">
+      <div>
+        <p class="kicker">Visit</p>
+        <h2 style="font-size:clamp(2.1rem,5vw,3.3rem);margin:12px 0 14px">402 W Green Street,<br />Middletown, MD</h2>
+        <p style="color:var(--ink-soft)">In the Valley, in Middletown, Maryland. Open Thursday through Saturday, 9:30am to sellout.</p>
+        <ul class="visit-list">
+          <li><i class="fa-solid fa-location-dot"></i><span><b>402 W Green Street, Middletown, MD</b><br /><a href="https://www.google.com/maps/search/?api=1&amp;query=402+W+Green+Street%2C+Middletown%2C+MD" target="_blank" rel="noopener">Open in Google Maps</a></span></li>
+          <li><i class="fa-solid fa-clock"></i><span><b>Thursday–Saturday, 9:30am–sellout</b><br />Doors open at 9:30am. There is no closing time listed — the counter sells out.</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span><b>Preorder enquiries by email</b><br /><a href="mailto:debsartisanbakehouse@gmail.com">debsartisanbakehouse@gmail.com</a></span></li>
+          <li><i class="fa-solid fa-camera"></i><span><b>Today’s bakes are on Instagram</b><br /><a href="https://www.instagram.com/debsartisanbakehouse" target="_blank" rel="noopener">@debsartisanbakehouse</a> — menu, preorders and sell-outs are posted there first.</span></li>
+        </ul>
+      </div>
+      <div>
+        <div class="hours">
+          <div class="hours-head"><b>Opening hours</b><span>Thu–Sat</span></div>
+          <div class="hours-row" data-day="0"><span class="day">Sunday</span><span>Closed</span></div>
+          <div class="hours-row" data-day="1"><span class="day">Monday</span><span>Closed</span></div>
+          <div class="hours-row" data-day="2"><span class="day">Tuesday</span><span>Closed</span></div>
+          <div class="hours-row" data-day="3"><span class="day">Wednesday</span><span>Closed</span></div>
+          <div class="hours-row" data-day="4"><span class="day">Thursday</span><span class="time">9:30am – sellout</span></div>
+          <div class="hours-row" data-day="5"><span class="day">Friday</span><span class="time">9:30am – sellout</span></div>
+          <div class="hours-row" data-day="6"><span class="day">Saturday</span><span class="time">9:30am – sellout</span></div>
+          <div class="hours-foot">Hours from the bakery’s Instagram bio: Thursday thru Saturday, 9:30am–sellout. No closing time is listed — when the counter sells out, the day is done. Check Instagram for today.</div>
+        </div>
+        <div class="visit-photo" style="margin-top:18px"><img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&amp;w=1600&amp;auto=format&amp;fit=crop" alt="Fresh bread and pastries on a bakery shelf" /></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="story" class="story">
+    <div class="wrap story-grid">
+      <div class="story-photo"><img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?q=80&amp;w=1600&amp;auto=format&amp;fit=crop" alt="Baker working in a kitchen" /></div>
+      <div class="story-copy">
+        <p class="kicker">Our story</p>
+        <h2>Baked in the Valley since 2018</h2>
+        <p>Deb's Artisan Bakehouse is a <strong>women-owned</strong>, small-batch artisan bakehouse in Middletown, Maryland — baking in the Valley since <strong>2018</strong>.</p>
+        <p>It has been voted <strong>Frederick County Maryland's Best Bakery 7 years in a row</strong>. The pastries are hand-crafted in small batches, and they sell out — people line up before the doors open.</p>
+        <p>If you have only seen Deb's on Instagram, this page is the missing piece: the address, the hours, and what to ask for when you get there.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="instagram">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker">Follow along</p>
+        <h2>Instagram is where it happens</h2>
+        <p>Daily bakes, Saturday preorders and sell-outs are posted on Instagram first.</p>
+      </div>
+      <div class="ig-grid">
+        <a class="ig-card" href="https://www.instagram.com/debsartisanbakehouse" target="_blank" rel="noopener">
+          <i class="fa-brands fa-instagram"></i><h3>@debsartisanbakehouse</h3><p>The bakehouse. 402 W Green Street, Middletown, MD. Today’s bakes, preorders and opening days.</p><span>Follow the bakehouse <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <a class="ig-card" href="mailto:debsartisanbakehouse@gmail.com">
+          <i class="fa-solid fa-envelope"></i><h3>Email Deb's</h3><p>Preorder enquiries by email: debsartisanbakehouse@gmail.com</p><span>Send an email <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap faq-list">
+      <div class="faq-item"><button class="faq-q" type="button">When are you open? <i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Thursday through Saturday, 9:30am to sellout. There is no closing time listed — when the counter sells out, the day is done. Check Instagram for today.</p></div></div>
+      <div class="faq-item"><button class="faq-q" type="button">Do you take preorders? <i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Saturday preorders go through the preorder link in the Instagram bio. For questions, email <a href="mailto:debsartisanbakehouse@gmail.com">debsartisanbakehouse@gmail.com</a> or send a DM to <a href="https://www.instagram.com/debsartisanbakehouse" target="_blank" rel="noopener">@debsartisanbakehouse</a>.</p></div></div>
+      <div class="faq-item"><button class="faq-q" type="button">Where is the bakehouse? <i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>402 W Green Street, Middletown, MD. Open Thursday through Saturday, 9:30am to sellout.</p></div></div>
+      <div class="faq-item"><button class="faq-q" type="button">What should I try first? <i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>The pastries sell out, so come early. The pies named on the counter include apple crumb pie and German chocolate pie, plus 5-inch square pies. Check Instagram for what is baking today.</p></div></div>
+      <div class="faq-item"><button class="faq-q" type="button">Is there a full menu online? <i class="fa-solid fa-plus"></i></button><div class="faq-a"><p>Not yet — the current homepage says the menu lives on socials, with no preorders. That is why this page exists: the menu, hours and ordering are on Instagram for now.</p></div></div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Come early.<br /><em>Come hungry.</em></h2>
+      <p>402 W Green Street, Middletown, MD — Thursday through Saturday, 9:30am to sellout. Check Instagram for today’s bakes before you set off.</p>
+      <div class="cta-row">
+        <a class="btn btn-butter" href="https://www.instagram.com/debsartisanbakehouse" target="_blank" rel="noopener">Check today’s bakes <i class="fa-brands fa-instagram"></i></a>
+        <a class="btn btn-outline-w" href="https://www.google.com/maps/search/?api=1&amp;query=402+W+Green+Street%2C+Middletown%2C+MD" target="_blank" rel="noopener">Get directions</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>
+  <div class="wrap foot">
+    <div><a class="brand" href="#top" style="font-size:1.3rem">Deb's Artisan Bakehouse</a><br /><small>402 W Green Street, Middletown, MD · Thu–Sat, 9:30am–sellout</small></div>
+    <div class="foot-links">
+      <a href="https://www.instagram.com/debsartisanbakehouse" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:debsartisanbakehouse@gmail.com">Email</a>
+      <a href="https://debsartisanbakehouse.com" target="_blank" rel="noopener">Current site</a>
+    </div>
+    <small>Preview site — menu and hours from Deb's Instagram. No prices listed; ask in the shop.</small>
+  </div>
+</footer>
+<script>
+  var burger=document.getElementById('burger'), nav=document.getElementById('navLinks');
+  if(burger){burger.addEventListener('click',function(){var o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',o?'true':'false');});}
+  document.querySelectorAll('.faq-q').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var item=btn.parentElement, ans=item.querySelector('.faq-a'), open=item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(function(i){i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0';});
+      if(!open){item.classList.add('open');ans.style.maxHeight=ans.scrollHeight+'px';}
+    });
+  });
+  (function(){
+    var now=new Date(), day=now.getDay(), mins=now.getHours()*60+now.getMinutes();
+    var openDay=(day===4||day===5||day===6), isOpen=openDay&&mins>=570;
+    var pill=document.getElementById('openPill'), txt=document.getElementById('openText'), today=document.getElementById('todayStatus');
+    document.querySelectorAll('.hours-row').forEach(function(r){if(parseInt(r.getAttribute('data-day'),10)===day){r.classList.add('today');}});
+    if(pill){pill.classList.toggle('closed',!isOpen); txt.textContent=isOpen?'Open now — until sellout':(openDay?'Closed now — opens 9:30am':'Closed today — opens Thursday 9:30am');}
+    if(today){today.textContent=isOpen?'Open now, until sellout':(openDay?'Closed now, opens 9:30am':'Closed today');}
+  })();
+</script>
+</body>
+</html>
